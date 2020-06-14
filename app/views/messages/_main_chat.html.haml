@@ -1,0 +1,37 @@
+.ChatMain
+  .ChatMain__GroupInfo 
+    .ChatMain__GroupInfo__LeftBox
+      .ChatMain__GroupInfo__LeftBox-GroupName group-name
+      .ChatMain__GroupInfo__LeftBox-MemberList Menber : masa
+    .ChatMain__GroupInfo__RightBox
+      .ChatMain__GroupInfo__RightBox-Edit
+        = link_to "Edit","#",class:"ChatMain__GroupInfo__RightBox-EditBtn"
+      
+
+  .ChatMain__Messages
+    .ChatMain__Messages__Message
+      .ChatMain__Messages__Message__Box
+        .ChatMain__Messages__Message__Box-MemberName masa
+        .ChatMain__Messages__Message__Box-UpperDate 2020/06/11
+      .ChatMain__Messages__Message-MessageText こんにちは
+      .ChatMain__Messages__Message__Box
+        .ChatMain__Messages__Message__Box-MemberName masa
+        .ChatMain__Messages__Message__Box-UpperDate 2020/06/11
+      .ChatMain__Messages__Message-MessageText こんにちは
+      .ChatMain__Messages__Message__Box
+        .ChatMain__Messages__Message__Box-MemberName masa
+        .ChatMain__Messages__Message__Box-UpperDate 2020/06/11
+      .ChatMain__Messages__Message-MessageText こんにちは
+
+
+  
+  .ChatMain__MessageForm
+    .ChatMain__MessageForm__Box
+      %input.ChatMain__MessageForm__Box-Left{placeholder: "type a message"}
+      
+        %label.ChatMain__MessageForm__Box-Right
+          = icon('fas', 'image')
+          %input.ChatMain__MessageForm__Box-Right-File{type: "file"}
+
+    %form
+      %input.ChatMain__MessageForm__Box-SendBtn{type: "submit" ,value: "Send" }
