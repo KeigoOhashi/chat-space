@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+}
+
+// サイドバー
+.SideBar__Header {
+    width: 300px;
+    background-color: #253141;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    &__Box {
+      margin: 0 20px;
+      color: #fff;
+      font-size: 16px;
+      height: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      line-height: 20px;
+    }
+}
+
+.icon {
+  text-decoration: none;
+}
+.fa {
+  color: #fff;
+  margin-left: 5px;
+}
+.SideBar__GroupList{
+  background-color: #2f3e51;
+  height: calc(100% - 100px);
+  &__Groups {
+    padding:20px 20px ;
+    height: 90px;
+    &-GroupName {
+      font-size: 15px;
+      color: #fff;
+      height: 20px;
+      margin-bottom: 5px;
+    }
+    &-GroupMessage {
+      font-size: 11px;
+      color: #fff;
+      height: 11px;
+    }
+  }
+}
+
+// チャットのメイン部分
+.ChatMain {
+  width: calc(100vw - 300px);
+  height: calc(100vh - 190px);
+}
+
+// チャットのグループ情報
+.ChatMain__GroupInfo{
+  background-color: #fff;
+  height: 100px;
+  margin: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  &__LeftBox {
+    padding-top: 35px;
+    height: 65px;
+    &-GroupName {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 15px;
+      line-height: 20px;
+      height: 35px;
+  }
+  &-MemberList {
+    font-size: 12px;
+    color: #999;
+    height: 12px;
+  }
+}
+&__RightBox {
+  margin-top: 28px;
+  padding: 20px 20px;
+  border: solid 1px #38aef0;
+  color: #38aef0;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  &-EditBtn {
+    color: #38aef0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+}
+}
+
+// メッセージ一覧
+.ChatMain__Messages{
+  background-color: #fafafa;
+  height: calc(100vh - 190px);
+  padding: 35px 40px;
+  &__Message {
+    height: 20px;
+    &__Box {
+      display: flex;
+      margin-bottom: 12px;
+      &-MemberName {
+        font-size: 16px;
+        color: #333;
+        height: 16px;
+      }
+      &-UpperDate {
+        font-size: 12px;
+        color: #999;
+        margin-left: 10px;
+        height: 12px;
+      }
+    }
+    &-MessageText {
+      height: 14px;
+      font-size: 14px;
+      color: #434A54;
+      padding-bottom: 40px;
+    }
+  }
+}
+
+// メッセージ入力フォーム
+.ChatMain__MessageForm {
+  background-color: #d2d2d2;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  &__Box {
+    height: 50px;
+    background-color: #fff;
+    width: calc(100vw - 195px);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &-Left {
+      width: 100%;
+      border-width: 0;
+      margin-left: 10px;
+    }
+    &-Right {
+      margin-right: 10px;
+      position: absolute;
+      height: 0;
+      right: 10px;
+      top: 13px;
+      font-size: 1.3rem;
+      &-File {
+        display: none;
+      }
+    }
+    &-SendBtn {
+      margin-top: 20px;
+      margin-left: 10px;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 0 30px;
+      background: #38aef0;
+      color: #ffffff;
+      height: 50px;
+    }
+  }
+}

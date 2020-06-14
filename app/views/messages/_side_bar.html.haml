@@ -1,0 +1,17 @@
+.SideBar
+  .SideBar__Header
+    .SideBar__Header__Box
+      .side__header__box__name user-name
+      .side__header__box__menu
+        = link_to "#" ,class:"icon" do
+          = icon('fa', 'fa fa-edit')
+        = link_to "#" ,class:"icon" do
+          = icon('fa', 'fa fa-cog')
+
+  .SideBar__GroupList
+    .SideBar__GroupList__Groups
+      .SideBar__GroupList__Groups-GroupName group-name
+      .SideBar__GroupList__Groups-GroupMessage message.sample
+    .SideBar__GroupList__Groups
+      .SideBar__GroupList__Groups-GroupName group-name
+      .SideBar__GroupList__Groups-GroupMessage message.sample
