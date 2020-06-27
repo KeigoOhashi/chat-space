@@ -1,37 +1,42 @@
 .ChatMain
   .ChatMain__GroupInfo 
     .ChatMain__GroupInfo__LeftBox
-      .ChatMain__GroupInfo__LeftBox-GroupName group-name
-      .ChatMain__GroupInfo__LeftBox-MemberList Menber : masa
+      .ChatMain__GroupInfo__LeftBox-GroupName 
+        = @group.name
+      .ChatMain__GroupInfo__LeftBox-MemberList 
+        Menber : 
+        - @group.users.each do |user|
+          = user.name
     .ChatMain__GroupInfo__RightBox
       .ChatMain__GroupInfo__RightBox-Edit
-        = link_to "Edit","#",class:"ChatMain__GroupInfo__RightBox-EditBtn"
+        = link_to "Edit",edit_group_path(@group.id),class:"ChatMain__GroupInfo__RightBox-EditBtn"
       
-
   .ChatMain__Messages
-    .ChatMain__Messages__Message
-      .ChatMain__Messages__Message__Box
-        .ChatMain__Messages__Message__Box-MemberName masa
-        .ChatMain__Messages__Message__Box-UpperDate 2020/06/11
-      .ChatMain__Messages__Message-MessageText こんにちは
-      .ChatMain__Messages__Message__Box
-        .ChatMain__Messages__Message__Box-MemberName masa
-        .ChatMain__Messages__Message__Box-UpperDate 2020/06/11
-      .ChatMain__Messages__Message-MessageText こんにちは
-      .ChatMain__Messages__Message__Box
-        .ChatMain__Messages__Message__Box-MemberName masa
-        .ChatMain__Messages__Message__Box-UpperDate 2020/06/11
-      .ChatMain__Messages__Message-MessageText こんにちは
+    .messages
+      = render @messages
 
-
-  
+    
   .ChatMain__MessageForm
     .ChatMain__MessageForm__Box
-      %input.ChatMain__MessageForm__Box-Left{placeholder: "type a message"}
-      
-        %label.ChatMain__MessageForm__Box-Right
-          = icon('fas', 'image')
-          %input.ChatMain__MessageForm__Box-Right-File{type: "file"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
 
-    %form
-      %input.ChatMain__MessageForm__Box-SendBtn{type: "submit" ,value: "Send" }
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+
+            = icon('fas', 'image', class: 'icon')
+
+            = f.file_field :image, class: 'hidden'
+
+        = f.submit 'Send', class: 'form__submit'
+  
+  -# .ChatMain__MessageForm
+  -#   .ChatMain__MessageForm__Box
+  -#     %input.ChatMain__MessageForm__Box-Left{placeholder: "type a message"}
+      
+  -#       %label.ChatMain__MessageForm__Box-Right
+  -#         = icon('fas', 'image')
+  -#         %input.ChatMain__MessageForm__Box-Right-File{type: "file"}
+
+  -#   -# %form
+  -#     %input.ChatMain__MessageForm__Box-SendBtn{type: "submit" ,value: "Send" 
