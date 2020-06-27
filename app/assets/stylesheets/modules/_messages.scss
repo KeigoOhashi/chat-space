@@ -139,35 +139,63 @@
   &__Box {
     height: 50px;
     background-color: #fff;
-    width: calc(100vw - 195px);
     display: flex;
     justify-content: space-between;
-    position: relative;
-    &-Left {
-      width: 100%;
-      border-width: 0;
-      margin-left: 10px;
-    }
-    &-Right {
-      margin-right: 10px;
-      position: absolute;
-      height: 0;
-      right: 10px;
-      top: 13px;
-      font-size: 1.3rem;
-      &-File {
-        display: none;
-      }
-    }
-    &-SendBtn {
-      margin-left: 10px;
-      display: inline-block;
-      font-size: 16px;
-      cursor: pointer;
-      padding: 0 30px;
-      background: #38aef0;
-      color: #ffffff;
-      height: 50px;
-    }
   }
 }
+
+.form__message {
+  width: calc(100vw - 450px);
+  height: 100%;
+  display: flex;
+}
+.new_message {
+  position: relative;
+
+}
+
+.form__mask{
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.form__submit {
+  position: absolute;
+  top: 1px;
+  right: -110px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #38aef0;
+  color: #ffffff;
+  padding: 10px 30px;
+}
+
+.icon {
+  padding-right: 10px;
+}
+    // &-Left {
+    //   width: 100%;
+    //   border-width: 0;
+    //   margin-left: 10px;
+    // }
+    // &-Right {
+    //   margin-right: 10px;
+    //   position: absolute;
+    //   height: 0;
+    //   right: 10px;
+    //   top: 13px;
+    //   font-size: 1.3rem;
+    //   &-File {
+    //     display: none;
+    //   }
+    // }
+    // &-SendBtn {
+    //   margin-left: 10px;
+    //   display: inline-block;
+    //   height: 50px;
+    // }
