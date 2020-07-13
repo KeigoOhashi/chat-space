@@ -55,7 +55,7 @@
 // チャットのメイン部分
 .ChatMain {
   width: calc(100vw - 300px);
-  height: calc(100vh - 190px);
+  height: 100vh;
 }
 
 // チャットのグループ情報
@@ -103,31 +103,35 @@
   background-color: #fafafa;
   height: calc(100vh - 190px);
   padding: 35px 40px;
-  &__Message {
-    height: 20px;
-    &__Box {
-      display: flex;
-      margin-bottom: 12px;
-      &-MemberName {
-        font-size: 16px;
-        color: #333;
-        height: 16px;
-      }
-      &-UpperDate {
-        font-size: 12px;
-        color: #999;
-        margin-left: 10px;
-        height: 12px;
-      }
-    }
-    &-MessageText {
-      height: 14px;
-      font-size: 14px;
-      color: #434A54;
-      padding-bottom: 40px;
-    }
+  overflow: scroll;
+}
+
+.message {
+  height: 70px;
+  margin-bottom: 12px;
+}
+
+.upper-message {
+  display: flex;
+  &__user-name {
+    font-size: 16px;
+    color: #333;
+    height: 16px;
+  }
+  &__date {
+      font-size: 12px;
+      color: #999;
+      margin-left: 10px;
+      height: 12px;
   }
 }
+
+.lower-message{
+    height: 14px;
+    font-size: 14px;
+    color: #434A54;
+    margin-top: 20px;
+  }
 
 // メッセージ入力フォーム
 .ChatMain__MessageForm {
@@ -141,14 +145,14 @@
     background-color: #fff;
     display: flex;
     justify-content: space-between;
+    &__form__message {
+      width: calc(100vw - 450px);
+      height: 100%;
+      display: flex;
+    }
   }
 }
 
-.form__message {
-  width: calc(100vw - 450px);
-  height: 100%;
-  display: flex;
-}
 .new_message {
   position: relative;
 
@@ -158,44 +162,23 @@
   position: absolute;
   right: 0;
   bottom: 10px;
+  &__hidden {
+    display: none;
+  }
+  &__form__submit {
+    position: absolute;
+    top: 1px;
+    right: -110px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #38aef0;
+    color: #ffffff;
+    padding: 10px 30px;
+  }
+  &__icon {
+    padding-right: 10px;
+  }
 }
 
-.hidden {
-  display: none;
-}
 
-.form__submit {
-  position: absolute;
-  top: 1px;
-  right: -110px;
-  font-size: 16px;
-  cursor: pointer;
-  background: #38aef0;
-  color: #ffffff;
-  padding: 10px 30px;
-}
 
-.icon {
-  padding-right: 10px;
-}
-    // &-Left {
-    //   width: 100%;
-    //   border-width: 0;
-    //   margin-left: 10px;
-    // }
-    // &-Right {
-    //   margin-right: 10px;
-    //   position: absolute;
-    //   height: 0;
-    //   right: 10px;
-    //   top: 13px;
-    //   font-size: 1.3rem;
-    //   &-File {
-    //     display: none;
-    //   }
-    // }
-    // &-SendBtn {
-    //   margin-left: 10px;
-    //   display: inline-block;
-    //   height: 50px;
-    // }
