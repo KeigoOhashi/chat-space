@@ -19,13 +19,13 @@
   .ChatMain__MessageForm
     .ChatMain__MessageForm__Box
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        = f.text_field :content, class: 'ChatMain__MessageForm__Box__form__message', placeholder: 'type a message'
 
         .form__mask
           = f.label :image, class: 'form__mask__image' do
 
-            = icon('fas', 'image', class: 'icon')
+            = icon('fas', 'image', class: 'form__mask__icon')
 
-            = f.file_field :image, class: 'hidden'
+            = f.file_field :image, class: 'form__mask__hidden'
 
-        = f.submit 'Send', class: 'form__submit'
+        = f.submit 'Send', class: 'form__mask__form__submit'
